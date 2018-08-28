@@ -10,7 +10,7 @@ include "header.php";
 </head>
 <body>
 	<?php 
-	$aranan=trim($_POST['aranan']);
+	$aranan=addslashes(strip_tags(trim($_POST['aranan'])));
 	if ($aranan==""){
 		header("Location:index.php");
 	}

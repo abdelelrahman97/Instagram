@@ -3,7 +3,7 @@ include "config.php";
 include "header.php";
 ?>
 <!--CONTENT-->
-<?php if(isset($_GET["id"])) { 
+<?php if(isset($_GET["id"])) {
    
     $_SESSION["gelen"]=$_GET["id"];
     
@@ -46,7 +46,7 @@ include "header.php";
     <div id="user-info">
         <h3><?php echo $getir['username'];?></h3>
         
-        <?php if($_SESSION["id"]==$_GET["id"]){?>    
+        <?php if($_SESSION["id"]==$_GET["id"]){?>
 
         <form action="photo-upload.php" method="POST" enctype="multipart/form-data">
             

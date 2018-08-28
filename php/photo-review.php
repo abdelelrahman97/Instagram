@@ -53,12 +53,12 @@ $begeni_sayisi=mysqli_fetch_array($begeni_cek);
 	 				<form action="islem.php" method="POST">
 						<div class="comment"><!--yorum heigth düzenlenecek-->
 	 						<input type="hidden" value="<?php echo $kayit['sID'] ?>" name="resimID">
+	 						<input type="hidden" value="<?php echo $kayit['id'] ?>" name="kullaniciID">
 							<input type="text" id="comment-text" placeholder="Yorum yaz..." name="comment">
-							<input type="submit" value="Gönder" id="comment-send" name="yaz">
+							<input type="submit" value="Gönder" id="comment-send" name="resim-detay-yaz">
 						</div>
 	 				</form>
 				</div>
-
 			</div>
 		 </div>
 

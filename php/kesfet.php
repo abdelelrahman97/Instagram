@@ -10,7 +10,14 @@
 	while ($kayit=mysqli_fetch_array($sorgu)) {
 
 		$sorgu2=mysqli_query($connection,"SELECT sYol FROM paylasimlar WHERE kullaniciID=".$kayit["id"]." LIMIT 3");
-		?>	
+		$sorgu3=mysqli_num_rows(mysqli_query($connection,"SELECT * from takipciler where takip_edilen_id=".$kayit["id"]." and takipci_id=".$_SESSION["id"].""));
+
+
+		
+		if($sorgu3<1)
+		{
+				?>	
+
 			<div class="discover-container">
 				<div class="discover-tab-bar">
 					<div class="discover-profil-photo">
@@ -31,6 +38,7 @@
 		<!--Kullanıcı resimleri-->
 
 		<?php
+	
 		while ($kayit2=mysqli_fetch_array($sorgu2)) { ?>
 			
 			<div class="discover-picture"><img style="height: 190px;width: 183px;" src="<?php echo $kayit2['sYol'] ?>" alt=""></div>
@@ -39,7 +47,7 @@
 
 		</div>
 		</div>
-	<?php } ?>
+	<?php }} ?>
 
 	<!--Yukarı çık tuşu-->
 	<a href="#" class="up">

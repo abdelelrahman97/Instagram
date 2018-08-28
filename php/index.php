@@ -79,7 +79,7 @@
             while ($yoruma_yorum_cek=mysqli_fetch_array($yoruma_yorum_sorgu)) {
                  if (mysqli_num_rows($yoruma_yorum_sorgu)>0) {
                 echo '<b>&nbsp;&nbsp;&nbsp;'.$yoruma_yorum_cek["kullanici_adi"]." : ".'</b>'.$yoruma_yorum_cek["yorum"]."<br/>";
-            }
+                }
             }
              echo   '<form action="islem.php" method="POST">
                             <input style="margin-left:35px;margin-top:10px;width:75%;height:30px;" type="text" placeholder="Yorum yazın..." name="yoruma-yorum"/>
@@ -89,6 +89,7 @@
                         </form>'; 
         }
 
+        
         echo '</div>';
 
         //Yorum yapma işlemleri
@@ -103,7 +104,7 @@
         }
     ?>
     
-     <?php } 
+     <?php }
      else{
         header("location:account_signup.php");
      }

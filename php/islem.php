@@ -5,7 +5,7 @@
 		$username=trim($_POST["username"]);
 		$fullname=trim($_POST["fullname"]);
 		$email=trim($_POST["email"]);
-		$password=trim(md5($_POST["password"]));
+		$password=md5(trim($_POST["password"]));
 		
 		
 	
@@ -72,7 +72,7 @@
     		}
     	}
 
-    	//Resime yorum yapma
+    	//Resime yorum yapma 
 
     	if (isset($_POST['yaz']))
     	{
@@ -83,6 +83,21 @@
 				if(mysqli_affected_rows($connection))
 				{
 					header("refresh:0.05;url=index.php");
+				}
+    		}
+    	}
+
+    	//Photo-review yorum yapma
+    	if (isset($_POST['resim-detay-yaz']))
+    	{
+    		$resimID=$_POST['resimID'];
+    		
+    		if ($_POST['resim-detay-yaz']!='') {
+    			$add=mysqli_query($connection,"INSERT INTO yorumlar(resimID,kullaniciID,yorum_yapan,yorum)VALUES('".$resimID."','".$_SESSION['id']."','".$_SESSION['username']."','".$_POST['comment']."')");
+				
+				if(mysqli_affected_rows($connection))
+				{
+					header("Location:profil.php?id='".$_POST['kullaniciID']."'");//Düzenlenecek
 				}
     		}
     	}

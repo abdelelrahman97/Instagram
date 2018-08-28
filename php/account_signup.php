@@ -76,7 +76,7 @@
     <!--Right-Content-Login-->
     <div id="right-content-login">
         <p>
-        <center style="font-family:'Roboto Condensed', sans-serif;">Hesabın Yok mu? <a href="account.php" style="text-decoration:none;">Kaydol</a>
+        <center style="font-family:'Arial', sans-serif;">Hesabın Yok mu? <a href="account.php" style="text-decoration:none;">Kaydol</a>
         </center>
         </p>
     </div>

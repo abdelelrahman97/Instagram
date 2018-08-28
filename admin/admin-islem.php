@@ -107,7 +107,7 @@
 		$kullaniciID=$_POST['kullaniciID'];
 		$sTarih=$_POST['sTarih'];
 		$sKonum=$_POST['sKonum'];
-		$sYol=$_POST['resim'];
+		@$sYol=$_POST['resim'];
 		$aciklama=$_POST['aciklama'];
 
 		echo '<script>
@@ -117,10 +117,14 @@
 		$paylasim_sil=mysqli_query($connection,"DELETE FROM paylasimlar WHERE sID='$sID'");
 
 		if ($paylasim_sil) {
-			echo "paylasim silindi";
+			echo '<script>
+				alert("Seçilen paylaşım silindi.");
+			</script>';
 			//header("Location:paylasim-duzenle.php?id=".$."");
 		}else{
-			echo "paylasim silinmedi";
+			echo '<script>
+				alert("Seçilen paylaşım silinemedi.");
+			</script>';
 			//header("Location:paylasim-duzenle.php?id=".$."");
 		}
 	}	
@@ -161,10 +165,14 @@
 		$yorum_sil=mysqli_query($connection,"DELETE FROM yorumlar WHERE resimID='$resimID'");
 
 		if ($yorum_sil) {
-			echo "Yorum silindi";
+			echo '<script>
+				alert("İlgili resim yorumları silindi.");
+			</script>';
 			header("Location:yorumlar.php");
 		}else{
-			echo "Yorum silinmedi";
+			echo '<script>
+				alert("İlgili resim yorumları silinemedi.");
+			</script>';
 			header("Location:yorumlar.php");
 		}
 	}	

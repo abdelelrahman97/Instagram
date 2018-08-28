@@ -2,7 +2,7 @@
 
 			if (isset($_POST['btn_register'])) {
 		
-			$username	=	$_POST['username'];
+			$username	=	trim($_POST['username']);
 			$password	=	md5($_POST['password']);
 									
 			

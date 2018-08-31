@@ -64,8 +64,8 @@
             echo        '<a href="islem.php?bgn='.$kayit['sID'].'">'.'<img src="..\img\heart_img.png" alt="Beğen" title="Beğen" class="btn-like">'.'</a>'; 
         }
 
-        if ($kayit['aciklama']=="") {}
-            else{ echo '<p>'.'<b>'.$kayit['username'].'</b>'.'  '.$kayit['aciklama'].'</p>';}
+        if ($kayit['aciklama']!="")
+            echo '<p>'.'<b>'.$kayit['username'].'</b>'.'  '.$kayit['aciklama'].'</p>';
        
         echo    '</div>';
         echo '<div class="photo-comment-show" style="margin-left:20px;width:auto;">';
